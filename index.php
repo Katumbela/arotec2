@@ -1,0 +1,936 @@
+<?php
+
+
+
+
+if(empty($_GET)){
+    echo"";
+  }
+  
+  else{
+    $curso = $_GET['curso'];
+
+    echo $curso;
+    echo $page;
+  }
+
+
+  if(empty( $_SESSION['email'] )){
+    echo"";
+}
+if(empty($_SESSION['senha'] )){
+    echo"";
+}
+
+else{
+
+    $email = $_SESSION['email'];
+    $senha = $_SESSION['senha'];
+
+    $pesquisar = "SELECT * FROM inscricao WHERE email ='$email' AND senha = '$senha'";
+    $datas = $conexao->query($pesquisar);
+
+if(mysqli_num_rows($datas)>0){
+    $set=mysqli_fetch_array($datas);
+
+        $user=$set['nome']; 
+        $_SESSION['user'] = $user;
+        $sobrenome=$set['sobrenome'];
+}
+
+}
+?>
+
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AROTEC | INICIO</title>
+    <link rel="shortcut icon" href="imagens/a.png" type="image/x-icon">
+    <script src="js/jquery.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+    <script src="alerts/sweetalert2.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <link rel="stylesheet" href="navv.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@animxyz/core">
+    <script src="js/init.js"></script>
+    <link rel="stylesheet" href="alerts/sweetalert2.css">
+   
+    <link rel="stylesheet" href="owl/dist/assets/owl.carousel.css">
+    <link rel="stylesheet" href="owl/dist/assets/owl.theme.default.css">
+    <link rel="stylesheet" href="produtos.css">
+    <script src="https://cdn.jsdelivr.net/npm/party-js@latest/bundle/party.min.js"></script>
+    <script src="owl/dist/owl.carousel.js"></script>
+</head>
+<style>
+*,
+html,
+body {
+    transition: .4s;
+}
+
+ul li a {
+    color: white !important;
+}
+
+
+footer {
+    padding: 3rem 0;
+}
+
+footer ul li {
+    list-style-type: none;
+    text-decoration: none;
+}
+
+footer ul li a {
+    text-decoration: none;
+}
+
+::-webkit-scrollbar-thumb:hover{
+  background: #0066be!important;
+}
+
+::-webkit-scrollbar-thumb{
+  background: #0066be!important;
+  cursor: pointer;
+  border-radius: 10px!important;
+}
+::-webkit-scrollbar{
+  width: 9px!important;
+}
+
+::-webkit-scrollbar-track{
+    cursor: pointer;
+  box-shadow: inset 0 0 5px grey!important;
+  border-radius: 10px!important;
+}
+footer .mideas li {
+    display: inline;
+}
+
+fieldset {
+    background: #ebf3ff;
+    padding: 3rem !important;
+}
+
+
+.arobot {
+    position: absolute;
+    width: 15%;
+}
+
+.login:hover,
+.login:focus,
+.login {
+    border-radius: 0;
+    background: none;
+    border: 2px solid #062656;
+    color: #062656;
+}
+
+.login-btn:hover,
+.login-btn:focus,
+.login-btn {
+    border-radius: 0;
+    background: none;
+    border: 2px solid #fff;
+    color: #fff;
+}
+
+.svg {
+    transition: .4s;
+}
+
+
+nav,
+footer {
+    background: #0066be;
+}
+
+
+
+.text-secondary {
+    font-size: 12px;
+}
+
+
+.carousel-control-prev-icon-bg {
+    background: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='black'><path d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/></svg>") !important;
+
+}
+
+.login-btn:hover .svg {
+    transform: translateX(8px);
+    transition: .4s;
+}
+
+.login:hover .svg {
+    transform: translateX(8px);
+    transition: .4s;
+}
+
+
+.criarC,
+.criarC:hover,
+.criarC:focus {
+    border-radius: 0;
+    background: #062656;
+    border: 2px solid #062656;
+    color: white;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+
+@media screen and (min-width: 700px) {
+    .loja {
+        margin-top: -3rem;
+    }
+
+
+    .mideas-sociais{
+    float: right;
+    margin-top: -3rem;
+}
+    .navbar-brand {
+        margin-left: 6.5rem;
+    }
+
+    .nav-c {
+        margin-left: 20% !important;
+    }
+
+    .l2 {
+        position: absolute;
+        top: -4rem;
+    }
+
+    .arobot {
+        top: 13rem;
+    }
+
+    .cursos {
+        margin-top: 2rem !important;
+    }
+
+    .lp {
+        padding: 4rem;
+    }
+
+
+    .carousel-item {
+        height: 60vh !important;
+    }
+
+
+    .pl:hover,
+    .pr:hover {
+        opacity: 1;
+    }
+
+    .pl {
+        margin-left: 15rem;
+        border-radius: 50px;
+        opacity: .3;
+        margin-top: 26rem !important;
+    }
+
+    .pr {
+        margin-right: 15rem;
+        border-radius: 50px;
+        opacity: .3;
+        margin-top: 26rem !important;
+    }
+
+}
+
+fieldset {
+    padding: 1.5rem;
+    position: relative;
+}
+
+
+.cursos {
+    margin-top: 2rem;
+}
+
+.cursos .imagenm1 {
+    height: 20vh;
+    margin: .8rem 0;
+    background-size: 100% 100%;
+    background-image: url(imagens/rob.avif);
+}
+
+.cursos .imagenm2 {
+    height: 20vh;
+    margin: .8rem 0;
+    background-size: 50% 50%;
+    background: url(imagens/ard.jpeg) center center;
+}
+
+.cursos .imagenm3 {
+    height: 20vh;
+    margin: .8rem 0;
+    background-size: 100% 100%;
+    background-image: url(imagens/ia.jpeg);
+}
+
+.cursos .imagenm4 {
+    height: 20vh;
+    margin: .8rem 0;
+    background-size: 80% 80%;
+    background: url(imagens/py1.jpeg) center center;
+}
+
+
+.ic:hover,
+.ic:focus {
+    border-radius: 0;
+    width: 100%;
+    background: none;
+    border-color: green;
+    color: green;
+}
+
+
+.ic {
+    border-radius: 0;
+    width: 100%;
+    background: none;
+}
+
+
+.azul {
+    color: #052c65;
+}
+
+.prod {
+    border: 1px solid #ececec;
+    display: grid;
+    place-items: center;
+    transition: .4s;
+    height: 13rem;
+    z-index: 1;
+}
+
+.prod:hover .img {
+    transform: scale(1.1);
+    transition: .4s;
+    z-index: -1;
+}
+
+.img {
+    z-index: -1000;
+}
+
+.prod img {
+    width: 70%;
+}
+
+.estrelas {
+    display: flex;
+    flex-direction: row;
+    color: #f1c900ea;
+}
+
+.col-12 h5{
+    color: #0066be!important;
+}
+
+#a {
+    position: relative;
+    width: 120px;
+    padding: 10px 20px;
+    font-size: 20px;
+    position: relative;
+    color: #2E8DEF;
+    background: #333333;
+    border-bottom: 3px solid #2E8DEF;
+}
+
+
+.span{
+    color: #0066bec4!important;
+}
+
+#a:after {
+    content: " ";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    background: #333333;
+    border-bottom: 3px solid #2E8DEF;
+    border-right: 20px solid #2E8DEF;
+
+    transform-origin: bottom left;
+    -ms-transform: skew(-30deg, 0deg);
+    -webkit-transform: skew(-30deg, 0deg);
+    transform: skew(-30deg, 0deg);
+}
+
+#texto {
+
+    z-index: 1000;
+}
+
+.carousel-item {
+    height: 50vh;
+}
+</style>
+
+<body>
+    <nav class="navbar navbar-expand-lg nav navbar-light p-3">
+        <div class="container-fluid">
+            <img src="imagens/logo.png" class="navbar-brand" height="40em" alt="">
+
+            <center>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="academia">Academia</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="empresas">Empresas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="loja">Loja</a>
+                        </li>
+                        <li class="nav-item dropdown" style="display: none">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Eventos
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">GGPN</a></li>
+                                <li><a class="dropdown-item" href="#">Unitel Code Robotica</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Campeonato Nacional de Robótica</a></li>
+                            </ul>
+                </div>
+            </center>
+            <form class="d-flex my-2 my-lg-1">
+                <a href="login"><button class="btn btn-outline-primary login-btn" type="submit">Login <svg class="svg"
+                            xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+                        </svg></button></a>
+                <a href="criar_conta"><button class="btn btn-outline-primary mx-4 criarC" type="submit">Criar
+                        Conta</button></a>
+            </form>
+        </div>
+        </div>
+    </nav>
+
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 col-lg-6 col-md-6 col-xs-6 py-lg-5">
+                            <h1 class="px-lg-5 mt-lg-5 azul">Academia de robótica</h1>
+                            <p class="px-lg-5 my-lg-4">
+                                Academia de robótica, variados cursos voltados ás novas tecnologias , Trazendo novas
+                                tecnologias mais proximos dos estudantes.
+                                <br>
+
+                                <br>
+                                <a href="academia" class="login btn">ir para academia <svg class="svg"
+                                        xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+                                    </svg></a>
+                            </p>
+                        </div>
+                        <div class="col-12 col-lg-6 col-md-6 col-xs-6 py-lg-5">
+                            <img src="imagens/f.png" styl="margin-top: -5rem; z-index: -1" class="w-50" alt="">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="carousel-item">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 col-lg-6 col-md-6 col-xs-6 py-lg-5">
+                            <h1 class="px-lg-5 mt-lg-5 azul">Loja</h1>
+                            <p class="px-lg-5 my-lg-4">
+                                Dispositivos e eletrônicos disponíveis para desenvolvimento e suporte de projectos.
+                                Desde componentes eletrônicos aos dispositivos montados.
+                                <br>
+                                <br>
+                                <a href="loja" class="btn login">ir para loja <svg class="svg"
+                                        xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+                                    </svg></a>
+                            </p>
+                        </div>
+                        <div class="col-12 col-lg-6 col-md-6 col-xs-6 py-lg-5 ml-lg-5 text-center">
+                            <img src="imagens/img3.png" class="loja" style="width: 50%" alt="">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="carousel-item">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 col-lg-6 col-md-6 col-xs-6 py-lg-5">
+                            <h1 class="px-lg-5 mt-lg-5 azul">Para empresas</h1>
+                            <p class="px-lg-5 my-lg-4">
+                                Consultoria e design de dispositivos e softwares inteligentes. Soluções e programas
+                                sociais para empresas.
+                                <br>
+                                <br>
+                                <a href="empresas" class="btn login">Saber mais <svg class="svg"
+                                        xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+                                    </svg></a>
+                            </p>
+                        </div>
+                        <div class="col-12 col-lg-6 col-md-6 col-xs-6 py-lg-5">
+                            <img src="imagens/img1.png" class="loja l2" style="width: 25%; " alt="">
+                        </div>
+                        <div class="col-12 col-lg-12 col-md-12 col-xs-12">
+
+                            <div class=" bg-light py-3" xyz="fade rotate-right">
+                                <div class="container">
+                                    <center>
+                                        <h6>Serviços prestados e parceiros</h6>
+                                    </center>
+                                    <div class="row">
+                                        <center>
+
+                                            <img src="imagens/unitel.png" style="width: 10%">
+                                            <img src="transferir.jpeg" class="mx-5" style="width: 10%">
+                                            <img src="ggpn.png" style="width: 10%">
+
+                                        </center>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <button class="carousel-control-prev pl"
+            style="background: grey!important; height: 3rem; width: 3rem;  margin-top: 40vh; " type="button"
+            data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next pr"
+            style="background: grey!important; height: 3rem; width: 3rem; margin-top: 40vh" type="button"
+            data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+        <br>
+    </div>
+    </div>
+
+
+    <div class="container xyz-in example-grid">
+        <fieldset xyz="fade small stagger" class="px-lg-5">
+            <h3 class="azul">Explore os cursos disponíveis na academia </h3>
+
+            <span style="font-size: 14px" class="text-secondary">Cursos disponíveis presencial nas academias da arotec e
+                online na nossa plataforma</span>
+            <br>
+            <br>
+            <a href="academia" class="login btn">Ver todos os cursos <i class="bi bi-mortarboard"></i></a>
+            <div class="cursos ">
+                <div class="row">
+                    <div class="col-12 col-lg-3 col-md-3 col-xs-3 xyz-in">
+                        <div class="column">
+                            <div class="imagenm1">
+
+                            </div>
+                            <div class="corpo">
+                                <h5><b class="text-primary">Curso de robótica Módulo 1</b></h5>
+                                <br>
+                                <span class="text-secondary"><i class="bi bi-smartwatch"></i> 4 Semanas</span><br>
+                                <span class="text-secondary"><i class="bi bi-pin-map"></i> Presencial</span><br>
+                                <span class="text-secondary"><i class="bi bi-cash-stack"></i> <b class="azul">20.000
+                                        AOA</b></span><br>
+                                <br>
+                                <br>
+                                <center>
+                                    <button class="btn ic btn-outline-primary">Inscrever-se <i
+                                            class="bi bi-pencil-square"></i></button>
+                                </center>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-3 col-md-3 col-xs-3 xyz-in">
+                        <div class="column">
+                            <div class="imagenm2">
+
+                            </div>
+                            <div class="corpo">
+                                <h5><b class="text-primary">Curso de Arduino</b></h5>
+                                <br>
+                                <span class="text-secondary"><i class="bi bi-smartwatch"></i> 4 Semanas</span><br>
+                                <span class="text-secondary"><i class="bi bi-pin-map"></i> Presencial &
+                                    Online</span><br>
+                                <span class="text-secondary"><i class="bi bi-cash-stack"></i> <b class="azul">15.000 AOA
+                                        - 25.000 AOA</b></span><br>
+                                <br>
+                                <br>
+                                <center>
+                                    <button class="btn ic btn-outline-primary">Inscrever-se <i
+                                            class="bi bi-pencil-square"></i></button>
+                                </center>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-3 col-md-3 col-xs-3 xyz-in">
+                        <div class="column">
+                            <div class="imagenm3">
+
+                            </div>
+                            <div class="corpo">
+                                <h5><b class="text-primary">Introdução à inteligencia artificial com python</b></h5>
+                                <span class="text-secondary"><i class="bi bi-smartwatch"></i> 4 Semanas</span><br>
+                                <span class="text-secondary"><i class="bi bi-pin-map"></i> Online</span><br>
+                                <span class="text-secondary"><i class="bi bi-cash-stack"></i> <b class="azul">20.000
+                                        AOA</b></span><br>
+                                <br>
+                                <br>
+                                <center>
+                                    <button class="btn ic btn-outline-primary">Inscrever-se <i
+                                            class="bi bi-pencil-square"></i></button>
+                                </center>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-3 col-md-3 col-xs-3 xyz-in">
+                        <div class="column">
+                            <div class="imagenm4">
+
+                            </div>
+                            <div class="corpo">
+                                <h5><b class="text-primary">Introdução a ciencia de computação com Python</b></h5>
+                                <span class="text-secondary"><i class="bi bi-smartwatch"></i> 4 Semanas</span><br>
+                                <span class="text-secondary"><i class="bi bi-pin-map"></i> Online</span><br>
+                                <span class="text-secondary"><i class="bi bi-cash-stack"></i> <b class="azul">15.000
+                                        AOA</b></span><br>
+                                <br>
+                                <br>
+                                <center>
+                                    <button class="btn ic btn-outline-primary">Inscrever-se <i
+                                            class="bi bi-pencil-square"></i></button>
+                                </center>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        
+        </fieldset>
+    </div>
+
+    <br><br>
+
+    <div class="container lp">
+        <h4 class="azul">Loja </h4>
+        <div class="w-75">
+            <span class="text-secondary">Encontre componentes eletrônicos e dispositivos para a montagem ou
+                desenvolvimento do seu projeto/ trabalho.</span>
+        </div>
+        <br>
+        <a href="loja" class="login btn">Ir para loja <i class="bi bi-shop svg"></i></a>
+        <br>
+        <br>
+        <div class="produtos row ">
+
+            <div class="col-12 col-lg-3 col-md-3 col-sm-6">
+                <div class="">
+                    <div class="column">
+                        <div class="prod">
+                            <img src="imagens/arobot.png" class="img" alt="">
+                        </div>
+                        <div class="conteudo">
+                            <br>
+                            <b class="azul">AROBOT</b>
+                            <br>
+                            <div class=" estrelas">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-half"></i>
+                            </div>
+                            <b class="azul my-5">
+                                <i class="bi bi-coin"></i> 50.000 kz</b>
+                            <center>
+                                <button class="btn ic btn-outline-primary"> Comprar <i
+                                        class="bi bi-bag-heart"></i></button>
+                            </center>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="col-12 col-lg-3 col-md-4 col-sm-6">
+                <div class="">
+                    <div class="column">
+                        <div class="prod">
+                            <img src="imagens/LIV.png" class="img" alt="">
+                        </div>
+                        <div class="conteudo">
+                            <br>
+                            <b class="azul">Livro Inteligente</b>
+                            <br>
+                            <div class=" estrelas">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-half"></i>
+                            </div>
+                            <b class="azul my-5">
+                                <i class="bi bi-info-circle"></i> Em produção</b>
+                            <br>
+                            <center>
+                                <a href="livro_inteligente"><button class="btn ic btn-outline-primary"> Comprar <i
+                                            class="bi bi-bag-heart"></i></button></a>
+                            </center>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <br>
+    <br>
+  
+
+<footer class="bg-light pt-5 pb-2 page-footer">
+    <div class="container">
+      <div class="row">
+       
+        <div class="col-12 col-lg-4 col-sm-4 col-md-4">
+            <h5 class="text-secondary">Sobre Nós</h5>
+            <ul>
+              <li><a class="text-secondary" href="index.php#sobre">Quem Somos?</a></li>
+              <li><a class="text-secondary" href="index.php#sobre">Quando Surgiu?</a></li>
+            </ul>
+
+        </div>
+        <div class="col-12 col-lg-4 col-sm-4 col-md-4">
+          <h5 class="text-secondary">Suporte</h5>
+          <ul>
+              
+            <li><a class="text-secondary" href="tel:+244946445629"> +244 946445629</a></li>
+            <li><a class="text-secondary" href="tel:+244946445629"> +244 996445629</a></li>
+            <li><a class="text-secondary" href="mailto:info.arotec@gmail.com">info.arotec@gmail.com</a></li>
+            <li><a class="text-secondary" href="contatar.php">Contactar</a></li>
+          </ul>
+        </div>
+        <div class="col-12 col-lg-4 col-sm-4 col-md-4">
+          <h5 class="text-secondary">Links Rápidos</h5>
+          <ul>
+            <li><a class="text-secondary" href="academia.php">Academia</a></li>
+              <li><a class="text-secondary" href="loja.php">Loja</a></li>
+              <li><a class="text-secondary" href="http://canar.rf.gd">Campeonato Nacional de Robótica</a></li>
+              <li><a class="text-secondary" href="inscricao.php">Unitel Code Robótica</a></li>
+          </ul>
+        </div>
+        </div>
+      </div>
+
+
+        <div id="payment">
+      </div>
+      
+    <div class="footer-copyright center mt-4">
+      <div class="container">
+      <a class="span text-secondary"  href="http://aro-tec.net"> &copy; AROTEC &middot; Todos os direitos reservados</a><br>
+        <p class="text-secondary text-lighten-1">Angola Robótica e Tecnologia - Angola</p>
+
+      <ul class="mideas-sociais "> 
+        <li class="img tooltipped" data-position="left" data-tooltip="Facebook"><a href="https://facebook.com/arotec1"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+  <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+</svg></a>
+        </li>
+        <li class="img tooltipped" data-position="bottom" data-tooltip="Linkedin"><a href="#" > <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+  <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+</svg></a>
+        </li>
+        <li class=" tooltipped" data-position="bottom" data-tooltip="Youtube"><a href="http://"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-youtube" viewBox="0 0 16 16">
+  <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z"/>
+</svg></li> 
+    </ul> 
+        </div>
+      </div>
+    </div>
+  </footer>
+
+    <script>
+    party.confetti(this, {
+        count: party.variation.range(20, 40),
+        size: party.variation.range(0.8, 1.2),
+        // ... and more!
+    });
+
+    $(document).ready(function() {
+        $('.sidenav').sidenav();
+    });
+
+
+    $('.carousel.carousel-slider').carousel({
+        fullWidth: true,
+    });
+
+    /*
+        autoplay()
+
+    function autoplay(){
+        $('.carousel').carousel('next');
+        setTimeout(autoplay, 9000);
+    }
+*/
+
+    $(document).ready(function() {
+        $('.tooltipped').tooltip();
+    });
+
+
+    $('button').click(function() {
+        $('#cart').html('1');
+
+        document.getElementById('msg').style.display = 'block';
+
+
+        setTimeout(() => {
+            document.getElementById('msg').style.display = 'none';
+        }, 2000);
+
+    });
+
+
+    $(document).ready(function() {
+        $('.modal').modal();
+    });
+
+
+    $('#solicitar').click(
+        function() {
+            if ($('#email').val() == "") {
+                $('#email').css("border-color", "red");
+                $('#msg2').css("transition", ".5s");
+                $('#msg2').html("<span style='color: red!important'>Por favor insira seu email</span>");
+            } else {
+                var data = {
+                    prod: 'AROBOT',
+                    email: $('#email').val(),
+                };
+                $.post("php/solicitar", data, function(s) {
+
+                    Swal.fire(
+                        'Solicitrado Com sucesso',
+                        'Recebemos o seu pedido entraremos em contacto em breve, Obrigado!',
+                        'success',
+                    )
+
+                });
+            }
+        }
+    );
+
+
+    $('.owl-carousel').owlCarousel({
+        loop: false,
+        margin: 10,
+        autoWidth: true,
+        indicators: true,
+        responsiveClass: true,
+        responsive: {
+            0: {
+                items: 2,
+                nav: false
+            },
+            600: {
+                items: 3,
+                nav: false
+            },
+            1000: {
+                items: 5,
+                nav: true,
+                loop: false
+            }
+        }
+    });
+
+
+    $(document).ready(function() {
+        $(document).ready(function() {
+            var galleryImage = $('.gallery').find('div').first();
+            var images = [
+                "<div class='img1 i'><div class='row'><div class='col s12 l6'><p style='font-size:30px;' class='body'><b style='color: white;font-size:50px; class='titul'> Dispositivos e softwares personalisados </b><br>Electronicos e softwares virados as preferencias, personalidade e necessidades dos usuarios/clientes. <br>  <br>  <br><a href='contatar?case=disper' style='border: 1px solid #fff; color: white; padding: .8rem; border-radius: 5px; margin-top: 2rem; z-index: 10000000; font-size:25px; border-radius: 25px'> Faça Seu Orçamento </a></p></div></div></div>",
+                "<div class='img2 i'><div class='row'><div class='col s12 l6'><p style='font-size:30px;' class='body'><b style='color: white;font-size:40px; class='titul'> Dispositivos e eletrônicos </b><br>Electronicos virados as educação e produção de eltronicos personalizados. <br>  <br>  <br><a href='contatar?case=disper' style='border: 1px solid #fff; color: white; padding: .8rem; border-radius: 5px; margin-top: 2rem; z-index: 10000000; font-size:25px; border-radius: 25px'> Faça Seu Orçamento </a></p></div></div></div>",
+                "<div class='img3 i'></div>",
+
+            ];
+
+            var i = 0;
+            setInterval(function() {
+                i = (i + 1) % images.length;
+                galleryImage.fadeOut(350, function() {
+                    $(this).html(images[i]);
+                    $(this).fadeIn(1250);
+                })
+            }, 9000);
+        })
+    });
+
+    $(window).scroll(function() {
+
+
+
+        var altura = window.pageYOffset;
+
+        if (altura >= 100) {
+            $('.nav').css('transition', '.4s');
+            alert("sdasdsadas");
+        }
+    });
+    </script>
+</body>
+
+</html>

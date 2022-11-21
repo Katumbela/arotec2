@@ -1,0 +1,149 @@
+
+
+  .ocultar{
+    display:none;
+     color: red;
+  }
+  
+
+.mostrar{
+   color: green;
+   border-bottom: 1px solid green;
+   padding-bottom: .6rem;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.mostrar:hover{
+    opacity: .8;
+   
+}
+
+
+.ocultar{
+    color: #a30202;
+    border-bottom: 1px solid #a30202;
+    padding-bottom: .5rem;
+     cursor: pointer;
+     transition: .2s;
+ }
+ 
+
+ .ocultar:hover{
+     font-weight: bold;
+     transition: .2s;
+ }
+
+ 
+
+ .bi-person-circle{
+    float: right;
+    margin-top: 2rem;
+}
+
+
+
+@media only screen and (min-width:650px) and (max-width:800px) {
+    
+    .nav-alinhamento{
+        width: 65%;
+    }
+
+    
+    .sair{
+        display: none;
+    }
+
+
+    .t3{
+        border-bottom: 2px solid var(--cor_principal);
+    }
+    .t1 {
+        display: block;
+    }
+
+    .sair img{
+        height: 10rem;
+        width: 20rem;
+    }
+    }
+
+@media only screen and (min-width:990px) and (max-width:1030px) {
+        
+        .nav-alinhamento{
+            width: 76%;
+        }
+   }
+
+
+   
+   @media only screen and (min-width:601px) and (max-width:649px) {
+
+    .sair{
+        display: none;
+    }
+    
+    .nav-alinhamento{
+        width: 80%;
+    }
+    .t2{
+        width: 90%;
+    }
+    .t3{
+        border-bottom: 2px solid var(--cor_principal);
+    }
+
+    .t1 {
+        display: block;
+        margin-top: -2rem;
+        margin-bottom: -2rem;
+    }
+   }
+
+
+    @media only screen and (min-width:100px) and (max-width:600px) {
+    
+        .nav-alinhamento{
+            width: 95%;
+        }
+
+        .t2{
+            width: 100%;
+            font-size: 25px;
+            margin-bottom: -2rem;
+        }
+
+        .t3{
+            border-bottom: 2px solid var(--cor_principal);
+        }
+    
+        .t1 {
+            display: block;
+            margin-top: -2rem;
+            margin-bottom: -2rem;
+        }
+
+        .sair{
+            display: none;
+        }
+
+        }
+    
+    
+@media only screen and (min-width:1305px) and (max-width:3000px) {
+    
+    .nav-alinhamento{
+        width: 95%;
+    }
+
+    }
+
+    
+    
+@media only screen and (min-width:1050px) and (max-width:1300px) {
+    
+    .nav-alinhamento{
+        width: 93%;
+    }
+
+    }

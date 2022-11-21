@@ -1,0 +1,124 @@
+
+.navbar .nav-link{
+    color: white!important;
+}
+
+
+fieldset {
+    background: #ebf3ff;
+    padding: 3rem !important;
+}
+
+
+.arobot {
+    position: absolute;
+    width: 15%;
+}
+
+.login:hover,
+.login:focus,
+.login {
+    border-radius: 0;
+    background: none;
+    border: 2px solid #062656;
+    color: #062656;
+}
+
+.login-btn:hover,
+.login-btn:focus,
+.login-btn {
+    border-radius: 0;
+    background: none;
+    border: 2px solid #fff;
+    color: #fff;
+}
+
+.svg {
+    transition: .4s;
+}
+
+
+nav,
+footer {
+    background: #0066be;
+}
+
+
+
+.text-secondary {
+    font-size: 12px;
+}
+
+
+.carousel-control-prev-icon-bg {
+    background: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='black'><path d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/></svg>") !important;
+
+}
+
+.login-btn:hover .svg {
+    transform: translateX(8px);
+    transition: .4s;
+}
+
+.login:hover .svg {
+    transform: translateX(8px);
+    transition: .4s;
+}
+
+
+.criarC,
+.criarC:hover,
+.criarC:focus {
+    border-radius: 0;
+    background: #062656;
+    border: 2px solid #062656;
+    color: white;
+}
+
+.c,
+.c:hover,
+.c:focus {
+    background: #0066be!important;
+    border-radius: 0!important;
+    color: white;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+
+
+footer a{
+    text-decoration: none;
+  }
+
+  footer ul li {
+    list-style-type: none;
+  }
+
+  footer svg {
+    color: grey;
+    height: 2em!important;
+    transition: .3s;
+  }
+
+  footer svg:hover {
+    color: #062656;
+    transition: .3s;
+  }
+
+
+  .c{
+    transition: .3s;
+  }
+
+  .c:hover{
+    transform: scale(1.01);
+    transition: .3s;
+  }
+
+  .mideas-sociais li {
+    display: inline!important;
+    margin: .5rem;
+  }

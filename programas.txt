@@ -1,0 +1,69 @@
+1. Compreender o básico (Dia: 1)
+Vous avez envoyé
+detalhes do dia 1:
+Vous avez envoyé
+Introdução a linguagejm python
+Vous avez envoyé
+Recursos e aplicativos do Python
+Como instalar o Python?
+Programa Hello World em Python
+Ambientes de desenvolvimento integrado (IDEs) para Python
+Vous avez envoyé
+2: Aprendendo Python, Datatypes, Variáveis e  operadores (Dia 2 - 3)
+Vous avez envoyé
+Detalhes do que vai se falar nas aulas desses dias Tipos de dados | Variáveis ​​em Python
+Variáveis ​​globais e locais em Python
+Operadores em Python
+Sobrecarga de operador em Python
+Exemplos de programação Python para prática.
+Vous avez envoyé
+Declarações condicionais e de controle de fluxo em Python (Dia: 4-5); Detalhes:
+Vous avez envoyé
+- Declarações de tomada - - de decisão em Python
+- Loops em Python
+- Técnicas de Looping em - - Python
+- Instruções de controle em Python
+- Comparação de encadeamento em Python
+Vous avez envoyé
+3: Manipulação de String lista e dicionário em Python (Dia 5 - 6)
+Vous avez envoyé
+- Arrays Python
+- Dicionário Python
+- Python String | Listas -  Python 
+- Objetos de byte versus - string em Python
+Conjuntos Python | Python Tuples
+Vous avez envoyé
+3: Familiarize-se com as funções e módulos Python (Dia: 8-10)
+Vous avez envoyé
+Detalhes: - Funções em Python
+- Função com argumentos
+- Funções Lambda
+- Módulos Python | Pacote Python
+Fechamentos Python
+Vous avez envoyé
+4: operações de arquivo Python (Dia: 11-12);
+Vous avez envoyé
+Detalhes: - Noções básicas de manipulação de arquivos em Python
+- Abra um arquivo em Python
+- Lendo um arquivo | - Gravando em um Arquivo
+- Função Python seek()
+- Função Python tell()
+Vous avez envoyé
+5: Abordagem Orientada a Objetos em Python (Dia: 13-15);
+Vous avez envoyé
+Classe, objeto e membros em Python
+Herança | Polimorfismo | Encapsulamento
+Ocultação de dados e impressão de objetos
+Construtores | Destruidores em Python
+Coleta de lixo em Python
+Vous avez envoyé
+6:  Expressões Regulares e Tratamento de Exceções em Python (Dia: 16-18);
+Vous avez envoyé
+Tratamento de exceções Python
+Exceção definida pelo usuário | Exceção integrada
+Python Try Except
+Expressão regular em Python
+MongoDB e Python
+Vous avez envoyé
+só enquadrar aos 16 dias
+28 jun 2022 à 14:59

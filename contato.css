@@ -1,0 +1,119 @@
+.mideas{
+    margin-left: -15rem;
+}
+
+
+  .ocultar{
+    display:none;
+  }
+  
+
+.senha{
+    color: red;
+    cursor: pointer;
+}
+
+.mideas svg{
+    margin-right: -7rem;
+    margin-bottom: -.5rem;
+}
+
+.campo{
+    width: 50%;
+    margin-left: -10rem;
+}
+
+textarea{
+    margin-top: 3%;
+    outline: none;
+    color: black;
+    height: 7rem;
+    background: rgb(221, 220, 220);
+    opacity: .6;
+}
+
+textarea::placeholder{
+    color: rgb(48, 112, 197);
+    opacity: .6;
+}
+
+form{
+    padding: 8%;
+    border-radius: 20px;
+}
+
+form .enviar{
+    margin-top: 3%;
+    border-radius: 35px;
+}
+
+@media (max-width:700px) {
+    
+
+    
+.title{
+    width: 50rem;
+    margin-left: -20%;
+}
+
+    form{
+        margin-top: 10%;
+    }
+}
+
+
+.divisao{
+    height: 2rem;
+    background: #b6b6b6c5;
+    margin-bottom: 2rem;
+}
+
+.ocultar{
+    display:none;
+  }
+  
+#mostrar{
+    color: var(--cor_principal);
+    cursor: pointer;
+}
+
+.column img{
+
+    height: 8rem;
+    width: 8rem;
+    border-radius: 50%;
+}
+
+.column .prof{
+    font-size: 10px;
+}
+.column h6{
+    font-size: 15px;
+}
+
+.fotos{
+    width: 70%;
+}
+
+.titulo{
+    margin-left: 10rem;
+    margin-right: 10rem;
+    padding-bottom: 1%;
+    border-bottom: 1px solid #3b3b3b;
+}
+
+
+@media screen and (min-width:100px) and (max-width:600px) {
+    .title{
+        
+        width: 20rem;
+        font-size: 25px;
+        margin-left: -20%;
+        }
+
+ .title .titulo{
+        
+            font-size: 25px;
+            }
+    
+    }

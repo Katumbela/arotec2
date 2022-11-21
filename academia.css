@@ -1,0 +1,399 @@
+body{
+    box-sizing: border-box;
+}
+
+.pub{
+    background: #f1c900ea var(--cor_secundaria);
+    height: 5rem;
+    line-height: 5rem;
+    position: static;
+    align-items: flex-end;
+    align-content: flex-end;
+    
+}
+
+.divisao{
+    display: none;
+}
+
+.pub button{
+    align-self: flex-end;
+    background: var(--cor_principal);
+    color: white;
+    border: 1px solid var(--cor_normal);
+    height: 3rem;
+    font-size: 18px;
+    float: right;
+    margin-top: 1rem;
+    width: 9rem;
+    transition: .3s;
+}
+
+.pub button:hover{
+    background: var(--cor_secundaria);
+    color: var(--cor_principal);
+    transition: .3s;
+}
+
+.course{
+    font-size: 30px;
+}
+
+
+.tag{
+    font-weight: bold;
+}
+
+.arobot{
+    height: 30rem;
+    margin-top: -7rem;
+}
+
+.habilidades{
+    width: 100%;
+    padding: 2%;
+}
+
+.num{
+    background: var(--cor_principal);
+    font-weight: bold;
+    height: 3rem;
+    margin-top: 2%;
+    width: 3rem;
+    padding-left: 1rem;
+    padding-top: .5rem;
+    line-height: 2rem;
+    color: white;
+    font-size:  25px;
+    border-radius: 100px;
+}
+
+.habilidades span{
+    background: var(--cor_normal);
+    width: 15rem;
+    padding-right: 3%;
+    border-radius: 10px;
+    padding-left: 3%;
+    color: aliceblue;
+    margin: 1%;
+}
+
+ol li{
+    text-decoration: solid;
+    list-style-type: circle green;
+    color: var(--cor_principal);
+}
+
+.desc-c{
+    color: white;
+}
+
+
+.timeline .icon{
+    width: 60%;
+    height: 80%;
+}
+
+.timeline .item{
+    height: 80%;
+    width: 100%;
+    margin-left: 5%;
+}
+
+.timeline .item .icon img{
+    width: 25%;
+    height: 25%;
+    border: 2px solid var(--cor_principal);
+    border-radius: 100px;
+}
+
+.irr:hover{
+    opacity: .9;
+}
+
+.ir{
+    background: var(--cor_principal);
+    color: white;
+    border: 1px solid var(--cor_secundaria);
+    border-radius: 20px;
+    padding: 1%;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+
+.timeline .conteudo span{
+
+    height: 40px;
+
+}
+
+.timeline .conteudo{
+    width: 60%;
+    background-color: var(--cor_secundaria);
+    padding: 1%;
+    border-radius: 20px;
+    border: 2px solid var(--cor_principal);
+}
+
+
+.cursos .rob-p{
+    background: url(imagens/Arobot\ com\ preço.png) center center;
+    background-repeat: no-repeat;
+    background-size: 70px 70px ;
+    font-size: 20px;
+  
+   }
+
+   .rob-e{
+    background: url(imagens/Resistores.png) center center;
+    background-repeat: no-repeat;
+    background-size: 50px 50px ;
+}
+
+.rob-2{
+    background: url(imagens/Rasp.png) center center;
+    background-repeat: no-repeat;
+    background-size: 70px 70px ;
+}
+
+.cursos .rob{
+    transition: .5s;
+    margin-top: 1rem;
+    height: 8rem;
+    color: var(--cor_principal);
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 4rem;
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid var(--cor_secundaria);
+
+}
+
+.cursos .rob:hover{
+    transition: .5s;
+    background: none;
+    height: 8rem;
+    color: var(--cor_principal);
+    font-weight: bold;
+    font-size: 15px;
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid var(--cor_principal);
+
+}
+
+.cursos .rob:focus{
+    transition: .5s;
+    background: none;
+    height: 4rem;
+    color: var(--cor_principal);
+    font-weight: bold;
+    font-size: 15px;
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid var(--cor_principal);
+
+}
+
+
+
+
+
+
+/* toda media query começa aqui    */
+
+
+    
+    
+
+
+    
+
+@media only screen and  (min-width:100px) and (max-width:500px) {
+
+    .arobot{
+        height: 20rem;
+    }
+    
+
+    .curso2{
+        width: 3rem;
+    }
+
+    
+.cursos .rob-p{
+ background: url(imagens/Arobot\ com\ preço.png) center center;
+ background-repeat: no-repeat;
+ background-size: 100px 100px ;
+
+}
+    
+.cursos .rob{
+
+    font-size: 15px;
+    line-height: 4rem;
+   
+    margin-top: 1rem;
+
+}
+
+
+.divisao{
+    display: block;
+}
+
+
+.course{
+    font-size: 22px;
+    height: 2rem;
+}
+
+.timeline .icon{
+    width: 40%;
+    height: 60%;
+    margin-left: -3.5rem;
+}
+
+.timeline .item{
+    height: 60%;
+    width: 60%;
+    margin-left: -5%;
+}
+
+.timeline .item .icon img{
+    width: 15%;
+    height: 15%;
+    margin-left: .7rem;
+    border: 2px solid var(--cor_principal);
+    border-radius: 100px;
+}
+
+
+.timeline .conteudo{
+    width: 50%;
+    background-color: var(--cor_secundaria);
+    padding: 1%;
+    margin-left: -5rem;
+    border-radius: 20px;
+    border: 2px solid var(--cor_principal);
+}
+
+
+
+.timeline .item{
+    height: 80%;
+    width: 60%;
+    margin-left: -18.5rem;
+}
+
+
+}
+
+
+
+
+
+
+@media only screen and (min-width:401px) and (max-width:700px) {
+
+    
+.course{
+    font-size: 25px;
+}
+
+
+
+.divisao{
+    display: none;
+}
+
+
+.timeline .item{
+    height: 80%;
+    width: 60%;
+    margin-left: -15rem;
+}
+
+.timeline{
+    margin-left: -4rem;
+}
+
+.desc-c{
+    display: none;
+}
+    
+}
+
+
+
+@media only screen and (min-width:701px) and (max-width:950px) {
+
+    
+    .course{
+        font-size: 25px;
+    }
+    
+    
+    .timeline .item{
+        height: 80%;
+        width: 80%;
+        margin-left: -8rem;
+    }
+    
+    .timeline{
+        margin-left: -4rem;
+    }
+    
+    .desc-c{
+        display: none;
+    }
+        
+    }
+
+
+    @media only screen and (min-width:951px) and (max-width:1300px) {
+        
+        .cursos{
+            width: 68rem;
+            margin-left: -5.8rem;
+        }
+
+.cursos .rob{
+    width: 15rem;
+    height: 7rem;
+    margin: 2rem;
+}
+
+
+
+.cursos .rob:hover{
+    transition: .5s;
+    background: none;
+    height: 7rem;
+    color: var(--cor_principal);
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid var(--cor_principal);
+
+}
+
+.cursos .rob:focus{
+    transition: .5s;
+    background: none;
+    height: 7rem;
+    color: var(--cor_principal);
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid var(--cor_principal);
+
+}
+
+
+
+    }
